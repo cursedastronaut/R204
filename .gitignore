@@ -1,0 +1,6 @@
+# Ignore everything
+*
+# But Logisim files
+!*.circ
+!TP*
+!.gitignore
