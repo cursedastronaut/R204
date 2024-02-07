@@ -8,3 +8,5 @@
 !.gitignore
 # But the subjects
 !TP*/*.pdf
+# But the answers
+!TP*/*.md

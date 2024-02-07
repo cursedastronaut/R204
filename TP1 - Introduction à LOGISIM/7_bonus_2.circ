@@ -62,17 +62,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(260,330)" to="(260,400)"/>
     <wire from="(240,290)" to="(240,360)"/>
     <wire from="(140,420)" to="(260,420)"/>
-    <wire from="(220,270)" to="(260,270)"/>
-    <wire from="(280,370)" to="(320,370)"/>
-    <wire from="(340,290)" to="(340,380)"/>
-    <wire from="(240,360)" to="(270,360)"/>
-    <wire from="(320,290)" to="(340,290)"/>
-    <wire from="(170,260)" to="(190,260)"/>
-    <wire from="(240,290)" to="(260,290)"/>
-    <wire from="(120,440)" to="(120,490)"/>
-    <wire from="(180,280)" to="(190,280)"/>
-    <wire from="(380,280)" to="(380,330)"/>
-    <wire from="(170,260)" to="(170,380)"/>
     <wire from="(170,380)" to="(290,380)"/>
     <wire from="(290,380)" to="(340,380)"/>
     <wire from="(260,330)" to="(380,330)"/>
@@ -80,59 +69,70 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(290,380)" to="(290,400)"/>
     <wire from="(180,280)" to="(180,370)"/>
     <wire from="(280,370)" to="(280,400)"/>
+    <wire from="(220,270)" to="(260,270)"/>
+    <wire from="(280,370)" to="(320,370)"/>
     <wire from="(180,370)" to="(280,370)"/>
+    <wire from="(340,290)" to="(340,380)"/>
+    <wire from="(240,360)" to="(270,360)"/>
     <wire from="(400,260)" to="(400,360)"/>
     <wire from="(320,270)" to="(350,270)"/>
+    <wire from="(320,290)" to="(340,290)"/>
     <wire from="(380,260)" to="(400,260)"/>
     <wire from="(270,360)" to="(270,400)"/>
+    <wire from="(170,260)" to="(190,260)"/>
+    <wire from="(240,290)" to="(260,290)"/>
+    <wire from="(120,440)" to="(120,490)"/>
+    <wire from="(180,280)" to="(190,280)"/>
+    <wire from="(380,280)" to="(380,330)"/>
     <wire from="(320,310)" to="(320,370)"/>
+    <wire from="(170,260)" to="(170,380)"/>
     <wire from="(270,360)" to="(400,360)"/>
-    <comp lib="1" loc="(350,270)" name="OR Gate">
-      <a name="facing" val="west"/>
-      <a name="size" val="30"/>
-      <a name="inputs" val="2"/>
-    </comp>
-    <comp lib="5" loc="(260,290)" name="LED">
-      <a name="color" val="#ffff00"/>
-    </comp>
-    <comp lib="5" loc="(120,490)" name="Button">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="5" loc="(320,310)" name="LED">
-      <a name="facing" val="east"/>
-      <a name="color" val="#00ff00"/>
+    <comp lib="5" loc="(260,270)" name="LED"/>
+    <comp lib="6" loc="(118,17)" name="Text">
+      <a name="text" val="7. Contrôle de feux de circulation"/>
     </comp>
     <comp lib="1" loc="(220,270)" name="OR Gate">
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
-    <comp lib="4" loc="(140,420)" name="Counter">
-      <a name="width" val="2"/>
-      <a name="max" val="0x3"/>
+    <comp lib="5" loc="(260,310)" name="LED">
+      <a name="color" val="#00ff00"/>
     </comp>
     <comp lib="5" loc="(320,270)" name="LED">
       <a name="facing" val="east"/>
     </comp>
-    <comp lib="5" loc="(260,270)" name="LED"/>
-    <comp lib="2" loc="(260,420)" name="Decoder">
+    <comp lib="5" loc="(260,290)" name="LED">
+      <a name="color" val="#ffff00"/>
+    </comp>
+    <comp lib="4" loc="(140,420)" name="Counter">
+      <a name="width" val="2"/>
+      <a name="max" val="0x3"/>
+    </comp>
+    <comp lib="5" loc="(120,490)" name="Button">
       <a name="facing" val="north"/>
-      <a name="select" val="2"/>
+    </comp>
+    <comp lib="6" loc="(268,258)" name="Text">
+      <a name="text" val="FEU1"/>
+    </comp>
+    <comp lib="5" loc="(320,310)" name="LED">
+      <a name="facing" val="east"/>
+      <a name="color" val="#00ff00"/>
+    </comp>
+    <comp lib="1" loc="(350,270)" name="OR Gate">
+      <a name="facing" val="west"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
     </comp>
     <comp lib="5" loc="(320,290)" name="LED">
       <a name="facing" val="east"/>
       <a name="color" val="#ffff00"/>
     </comp>
-    <comp lib="5" loc="(260,310)" name="LED">
-      <a name="color" val="#00ff00"/>
-    </comp>
-    <comp lib="6" loc="(118,13)" name="Text">
-      <a name="text" val="5. Contrôle de feux de circulation"/>
-    </comp>
-    <comp lib="6" loc="(268,258)" name="Text">
-      <a name="text" val="FEU1"/>
-    </comp>
     <comp lib="6" loc="(310,259)" name="Text">
       <a name="text" val="FEU2"/>
+    </comp>
+    <comp lib="2" loc="(260,420)" name="Decoder">
+      <a name="facing" val="north"/>
+      <a name="select" val="2"/>
     </comp>
   </circuit>
 </project>
