@@ -2,5 +2,9 @@
 *
 # But Logisim files
 !*.circ
+# But TP folders
 !TP*
+# But gitignore
 !.gitignore
+# But the subjects
+!TP*/*.pdf
