@@ -48,17 +48,24 @@
 | 1A 0000           | LOAD_B_A #00  |
 | C2 0000           | NOT B         |
 | 32 0000           | INC B         |
+
 ## 2. Microprocesseur avec sauts conditionnels 
 ### **2.1 Sur combien de bits est codée une instruction ?**
+32 bits
 
 ### **2.2 Sur combien de bits est codé le code opératoire ?**
+16 bits
 
 ### **2.3 Sur combien de bits est codé le champ DATA ou adresse ?**
+16 bits
 
 ### **2.4 A quoi servent les 4 bits JMPZ, JMPNZ, JMPN, JMPPZ ?**
-| Bit | Rôle |
-|-----|------|
-|     |      |
+| Bit   | Nom complet      | Rôle |
+|-------|------------------|------------------------------------|
+| JMPZ  | Jump if Zero     | Saute si le résultat est nul       |
+| JMPNZ | Jump if NOT Zero | Saute si le résultat n'est PAS nul |
+| JMPN  |  | Unknown |
+| JMPPZ |  | Unknown |
 
 ### **2.5 Donnez les codes binaires et hexa des instructions suivantes :**
 | Instruction    | Code Binaire | Code Hexa |
