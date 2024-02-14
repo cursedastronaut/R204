@@ -1,19 +1,19 @@
 # TP2 : Microprocesseurs (Réponses données)
 ## 1. Microprocesseurs élémentaire
-### **1.1 Sur combien de bits est codée une instruction?**
+### **1.1** Sur combien de bits est codée une instruction?
 24 bits
-### **1.2 Sur combien de bits est codé le champ DATA ou adresse ?**
+### **1.2** Sur combien de bits est codé le champ DATA ou adresse ?
 16 bits
-### **1.3 Quelles sont les positions, dans le code de l’instruction, des bits du champ DATA ou adresse (0 étant la position du bit de poids le plus faible) ?**
+### **1.3** Quelles sont les positions, dans le code de l’instruction, des bits du champ DATA ou adresse (0 étant la position du bit de poids le plus faible) ?
 0-15
 
-### **1.4 Sur combien de bits est codé le code opératoire ?**
+### **1.4** Sur combien de bits est codé le code opératoire ?
 8 bits
 
-### **1.5 Quelles sont les positions dans le code de l’instruction, des bits du code opératoire (0 étant la position du bit de poids le plus faible) ?**
+### **1.5** Quelles sont les positions dans le code de l’instruction, des bits du code opératoire (0 étant la position du bit de poids le plus faible) ?
 16-23
 
-### **1.6 Indiquez le rôle de chacun des bits du code opératoire**
+### **1.6** Indiquez le rôle de chacun des bits du code opératoire
 | Position       | Nom        | Rôle                       |
 |----------------|------------|----------------------------|
 | Bit 0          | JMP        | Instruction de saut        |
@@ -22,7 +22,7 @@
 | Bit 3          | MUX        | Sert à choisir entre DATA et Registre A pour l'entrée I0 de l'UAL (Multiplexeur) |
 | Bit 4, 5, 6, 7 | ALU        | Unité Logique Arithmétique |
 
-### **1.7 __Sans utiliser la simulation, mais en analysant uniquement le code binaire de chaque instruction,__ donnez en assembleur le programme contenu dans la mémoire. Que fait ce programme ?**
+### **1.7** __Sans utiliser la simulation, mais en analysant uniquement le code binaire de chaque instruction,__ donnez en assembleur le programme contenu dans la mémoire. Que fait ce programme ?
 | Mémoire Programme |  Assembleur | Label, saut |
 |-------------------|-------------|-------------|
 | 14 0000           | LOAD_A #00  |             |
@@ -34,14 +34,14 @@
 |-------------------------------------------------|
 | Calcule les multiples de 10 dans le registre A. |
 
-### **1.8 Modifiez le programme contenu dans la mémoire pour avoir le résultat dans B au lieu de A.**
+### **1.8** Modifiez le programme contenu dans la mémoire pour avoir le résultat dans B au lieu de A.
 | Mémoire Programme |  Assembleur | Label, saut |
 |-------------------|-------------|-------------|
 | 14 000A           | LOAD_A #10  |             |
 | 12 0000           | LOAD_B #00  |             |
 | 5A 0000           | ADD_B_A     | boucle      |
 | 01 0002           | JMP 2       | JMP boucle  |
-### **1.9 Ecrire un programme qui charge dans le registre A une valeur de votre choix puis calcule dans le registre B son complément à 2 (complément à 1 + 1)**
+### **1.9** Ecrire un programme qui charge dans le registre A une valeur de votre choix puis calcule dans le registre B son complément à 2 (complément à 1 + 1)
 | Mémoire Programme |  Assembleur   |
 |-------------------|---------------|
 | 14 00F0           | LOAD_A   #F0  |
@@ -60,16 +60,16 @@
 | 0005    | NOP                     | 0x0000 0000    |
 
 ## 2. Microprocesseur avec sauts conditionnels 
-### **2.1 Sur combien de bits est codée une instruction ?**
+### **2.1** Sur combien de bits est codée une instruction ?
 32 bits
 
-### **2.2 Sur combien de bits est codé le code opératoire ?**
+### **2.2** Sur combien de bits est codé le code opératoire ?
 16 bits
 
-### **2.3 Sur combien de bits est codé le champ DATA ou adresse ?**
+### **2.3** Sur combien de bits est codé le champ DATA ou adresse ?
 16 bits
 
-### **2.4 A quoi servent les 4 bits JMPZ, JMPNZ, JMPN, JMPPZ ?**
+### **2.4** A quoi servent les 4 bits JMPZ, JMPNZ, JMPN, JMPPZ ?
 | Bit   | Nom complet         | Rôle |
 |-------|---------------------|-------------------------------------------------------------------|
 | JMPZ  | Jump if Zero        | Saute si le résultat de l'opération précédente est nul            |
@@ -77,7 +77,7 @@
 | JMPN  | Jump if negative    | Saute si le résultat de l'opération précédente est négatif        |
 | JMPPZ | Jump if zero or >1  | Saute si le résultat de l'opération précédente est positif ou nul |
 
-### **2.5 Donnez les codes binaires et hexa des instructions suivantes :**
+### **2.5** Donnez les codes binaires et hexa des instructions suivantes :
 Avec VVVV = valeur, AAAA = adresse.
 | Instruction    | Code Binaire        | Code Hexa   |
 |----------------|---------------------|-------------|
@@ -90,7 +90,7 @@ Avec VVVV = valeur, AAAA = adresse.
 | JMPZ [label]   | 1000 0000 0000 AAAA | 0x0800 AAAA |
 | JMPNZ [label]  | 0100 0000 0000 AAAA | 0x0400 AAAA |
 
-### **2.6 En utilisant les instructions ci-dessus, écrire un programme qui charge dans le registre A la valeur 5 puis calcule sa factorielle. Vous donnerez 2 versions. La première version utilisera l’instruction JMPNZ. La deuxième version utilisera les instructions JMPZ et JMP. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.**
+### **2.6** En utilisant les instructions ci-dessus, écrire un programme qui charge dans le registre A la valeur 5 puis calcule sa factorielle. Vous donnerez 2 versions. La première version utilisera l’instruction JMPNZ. La deuxième version utilisera les instructions JMPZ et JMP. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.
 #### 1ère version (JMPNZ)
 | Adresse | Instruction Assembleur | Contenu mémoire |
 |---------|------------------------|-----------------|
@@ -123,3 +123,37 @@ Avec VVVV = valeur, AAAA = adresse.
 | 0004    | SUB_A_AB               | 0x006C 0006     |
 
 ## 3. Microprocesseur à 3 registres 
+### **3.1** Trouvez les codes binaires et hexa des instructions suivantes :
+| Instruction    | Code Binaire        | Code Héxa |
+|----------------|---------------------|-----------|
+| LOAD_A #valeur | 0000 0000 0000 0000 | 0x00 0000 |
+| LOAD_B #valeur | 0000 0000 0000 0000 | 0x00 0000 |
+| LOAD_A_B       | 0000 0000 0000 0000 | 0x00 0000 |
+| LOAD_B_C       | 0000 0000 0000 0000 | 0x00 0000 |
+| LOAD_C_A       | 0000 0000 0000 0000 | 0x00 0000 |
+| ADD_C_AB       | 0000 0000 0000 0000 | 0x00 0000 |
+| JMP (label)    | 0000 0000 0000 0000 | 0x00 0000 |
+
+
+### **3.2** En utilisant les instructions précédentes, écrire un programme qui charge dans le registre A la valeur 3 et dans le registre B la valeur 5 puis permute le contenu des 2 registres A et B. On utilisera le registre C comme variable temporaire pour effectuer la permutation. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.
+| Adresse | Instruction assembleur | Code Héxa |
+|---------|------------------------|-----------|
+| 0000    | NOP                    | 0x00 0000 |
+| 0001    | NOP                    | 0x00 0000 |
+| 0002    | NOP                    | 0x00 0000 |
+| 0003    | NOP                    | 0x00 0000 |
+| 0004    | NOP                    | 0x00 0000 |
+| 0005    | NOP                    | 0x00 0000 |
+
+
+### **3.3** On considère la suite de Fibonacci : 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... dans laquelle chaque élément est obtenu en faisant la somme des 2 éléments précédents (hormis les 2 premiers). Écrire un programme qui charge dans le registre  A  la  valeur  0  et  dans  le  registre  B  la  valeur  1  puis  calcule  dans  le  registre  C  les  valeurs  de  la  suite  de Fibonacci à l’infini. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.
+
+| Adresse | Instruction assembleur | Code Héxa |
+|---------|------------------------|-----------|
+| 0000    | NOP                    | 0x00 0000 |
+| 0001    | NOP                    | 0x00 0000 |
+| 0002    | NOP                    | 0x00 0000 |
+| 0003    | NOP                    | 0x00 0000 |
+| 0004    | NOP                    | 0x00 0000 |
+| 0005    | NOP                    | 0x00 0000 |
+
