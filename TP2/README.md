@@ -84,21 +84,21 @@ Avec VVVV = valeur, AAAA = adresse.
 #### 1ère version (JMPNZ)
 | Adresse | Instruction Assembleur | Contenu mémoire |
 |---------|------------------------|-----------------|
-| 0001    | LOAD_B #5              | 0x0014 0101     |
+| 0001    | LOAD_B #5              | 0x0012 0005     |
 | 0000    | LOAD_A #1              | 0x0014 0001     |
-| 0002    | DEC_B (b)              | 0x008C 0000     |
-| 0003    | MUL_A_B                | 0x0042 0000     |
-| 0004    | JMPNZ (b)              | 0x0000 0011     |
+| 0002    | MUL_A_B                | 0x008C 0000     |
+| 0003    | DEC_B (b)              | 0x0042 0000     |
+| 0004    | JMPNZ (b)              | 0x0400 0002     |
 | 0005    | NOP                    | 0x0000 0000     |
 | 0006    | NOP (f)                | 0x0000 0000     |
 
 #### 2ème version (JMPZ et JMP)
 | Adresse | Instruction Assembleur | Contenu mémoire |
 |---------|------------------------|-----------------|
-| 0001    | LOAD_B #5              | 0x0014 0101     |
+| 0001    | LOAD_B #5              | 0x0012 0005     |
 | 0000    | LOAD_A #1              | 0x0014 0001     |
-| 0002    | DEC_B (b)              | 0x008C 0000     |
-| 0003    | MUL_A_B                | 0x0042 0000     |
-| 0004    | JMPZ (f)               | Unknown yet     |
-| 0005    | JMP (b)                | Unknown yet     |
+| 0002    | MUL_A_B                | 0x008C 0000     |
+| 0003    | DEC_B (b)              | 0x0042 0000     |
+| 0004    | JMPZ (f)               | 0x0800 0006     |
+| 0005    | JMP (b)                | 0x0001 0002     |
 | 0006    | NOP (f)                | 0x0000 0000     |
