@@ -23,3 +23,13 @@
 | Bit 4, 5, 6, 7 | ALU        | Unité logique arithmétique |
 
 **__Sans utiliser la simulation, mais en analysant uniquement le code binaire de chaque instruction,__ donnez en assembleur le programme contenu dans la mémoire. Que fait ce programme ?**
+| Mémoire Programme |  Assembleur                                   |
+|-------------------|-----------------------------------------------|
+| 14 0000           | I0<br>I1-1<br>NOP<br>NOP<br>NOP<br>NOP        |
+| 12 000A           | I0<br>I1<br>NOP<br>NOP<br>NOP<br>I1 CMP 10    |
+| 5C0000            | I0 + I1<br>NOT I1<br>NOP<br>NOP<br>NOP<br>NOP |
+| 010002            | NOP<br>I0<br>NOP<br>NOP<br>NOP<br>I1          |
+
+| Rôle du programme |
+|-------------------|
+|                   |
