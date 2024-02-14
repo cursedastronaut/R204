@@ -49,6 +49,16 @@
 | C2 0000           | NOT B         |
 | 32 0000           | INC B         |
 
+### Bonus!
+| Adresse | Instruction Assembleur | Contenu mémoire |
+|---------|------------------------|-----------------|
+| 0001    | LOAD_A #10              | 0x0014 000A    |
+| 0000    | LOAD_B_A                | 0x001A 0000    |
+| 0002    | INC_B                   | 0x0032 0000    |
+| 0003    | MUL_B_A                 | 0x008A 0000    |
+| 0004    | DIV_B #2                | 0x0092 0002    |
+| 0005    | NOP                     | 0x0000 0000    |
+
 ## 2. Microprocesseur avec sauts conditionnels 
 ### **2.1 Sur combien de bits est codée une instruction ?**
 32 bits
@@ -102,15 +112,5 @@ Avec VVVV = valeur, AAAA = adresse.
 | 0004    | JMPZ (f)               | 0x0800 0006     |
 | 0005    | JMP (b)                | 0x0001 0002     |
 | 0006    | NOP (f)                | 0x0000 0000     |
-
-### Bonus!
-| Adresse | Instruction Assembleur | Contenu mémoire |
-|---------|------------------------|-----------------|
-| 0001    | LOAD_A #10              | 0x0014 000A    |
-| 0000    | LOAD_B_A                | 0x001A 0000    |
-| 0002    | INC_B                   | 0x0032 0000    |
-| 0003    | MUL_B_A                 | 0x008A 0000    |
-| 0004    | DIV_B #2                | 0x0092 0002    |
-| 0005    | NOP                     | 0x0000 0000    |
 
 ## 3. Microprocesseur à 3 registres 
