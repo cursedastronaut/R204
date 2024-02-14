@@ -113,4 +113,13 @@ Avec VVVV = valeur, AAAA = adresse.
 | 0005    | JMP (b)                | 0x0001 0002     |
 | 0006    | NOP (f)                | 0x0000 0000     |
 
+### Bonus!
+| Adresse | Instruction Assembleur | Contenu mémoire |
+|---------|------------------------|-----------------|
+| 0001    | LOAD_A #5              | 0x0014 0005     |
+| 0000    | LOAD_B #8              | 0x0012 0008     |
+| 0002    | ADD_A_B                | 0x005C 0000     |
+| 0003    | SUB_B_AB               | 0x006A 0000     |
+| 0004    | SUB_A_AB               | 0x006C 0006     |
+
 ## 3. Microprocesseur à 3 registres 
