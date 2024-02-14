@@ -60,12 +60,12 @@
 16 bits
 
 ### **2.4 A quoi servent les 4 bits JMPZ, JMPNZ, JMPN, JMPPZ ?**
-| Bit   | Nom complet      | Rôle |
-|-------|------------------|------------------------------------|
-| JMPZ  | Jump if Zero     | Saute si le résultat est nul       |
-| JMPNZ | Jump if NOT Zero | Saute si le résultat n'est PAS nul |
-| JMPN  |  | Unknown |
-| JMPPZ |  | Unknown |
+| Bit   | Nom complet         | Rôle |
+|-------|---------------------|-------------------------------------------------------------------|
+| JMPZ  | Jump if Zero        | Saute si le résultat de l'opération précédente est nul            |
+| JMPNZ | Jump if NOT Zero    | Saute si le résultat de l'opération précédente n'est PAS nul      |
+| JMPN  | Jump if negative    | Saute si le résultat de l'opération précédente est négatif        |
+| JMPPZ | Jump if zero or >1  | Saute si le résultat de l'opération précédente est positif ou nul |
 
 ### **2.5 Donnez les codes binaires et hexa des instructions suivantes :**
 | Instruction    | Code Binaire | Code Hexa |
