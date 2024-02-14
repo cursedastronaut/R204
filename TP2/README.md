@@ -68,36 +68,37 @@
 | JMPPZ | Jump if zero or >1  | Saute si le résultat de l'opération précédente est positif ou nul |
 
 ### **2.5 Donnez les codes binaires et hexa des instructions suivantes :**
-| Instruction    | Code Binaire | Code Hexa |
-|----------------|--------------|-----------|
-| NOP            | | |
-| LOAD_A #valeur | | |
-| LOAD_B_A       | | |
-| MUL_A_B        | | |
-| DEC_B          | | |
-| JMP [label]    | | |
-| JMPZ [label]   | | |
-| JMPNZ [label]  | | |
+Avec VVVV = valeur, AAAA = adresse.
+| Instruction    | Code Binaire        | Code Hexa   |
+|----------------|---------------------|-------------|
+| NOP            | 0000 0000 X000 XXXX | 0x0000 0000 |
+| LOAD_A #valeur | 0000 0001 0100 VVVV | 0x0014 VVVV |
+| LOAD_B_A       | 0000 0001 1010 XXXX | 0x001A 0000 |
+| MUL_A_B        | 0000 1000 1100 XXXX | 0x008C 0000 |
+| DEC_B          | 0000 0100 X010 XXXX | 0x0042 0000 |
+| JMP [label]    | 0000 0000 0001 AAAA | 0x0001 AAAA |
+| JMPZ [label]   | 1000 0000 0000 AAAA | 0x0800 AAAA |
+| JMPNZ [label]  | 0100 0000 0000 AAAA | 0x0400 AAAA |
 
 ### **2.6 En utilisant les instructions ci-dessus, écrire un programme qui charge dans le registre A la valeur 5 puis calcule sa factorielle. Vous donnerez 2 versions. La première version utilisera l’instruction JMPNZ. La deuxième version utilisera les instructions JMPZ et JMP. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.**
 #### 1ère version (JMPNZ)
 | Adresse | Instruction Assembleur | Contenu mémoire |
-|-|-|-|
-| 0| | |
-| 1| | |
-| 2| | |
-| 3| | |
-| 4| | |
-| 5| | |
-| 6| | |
+|---------|------------------------|-|
+| 0001    | LOAD_B #5              | |
+| 0000    | LOAD_A #1              | |
+| 0002    | DEC_B (b)              | |
+| 0003    | MUL_A_B                | |
+| 0004    | JMPNZ (b)              | |
+| 0005    | NOP                    | |
+| 0006    |                        | |
 
 #### 2ème version (JMPZ et JMP)
 | Adresse | Instruction Assembleur | Contenu mémoire |
-|-|-|-|
-| 0| | |
-| 1| | |
-| 2| | |
-| 3| | |
-| 4| | |
-| 5| | |
-| 6| | |
+|---------|------------------------|-|
+| 0001    | LOAD_B #5              | |
+| 0000    | LOAD_A #1              | |
+| 0002    | DEC_B (b)              | |
+| 0003    | MUL_A_B                | |
+| 0004    | JMPNZ (f)              | |
+| 0005    | JMP (b)                | |
+| 0006    | NOP (f)                | |
