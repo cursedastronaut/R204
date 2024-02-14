@@ -48,3 +48,38 @@
 | 1A 0000           | LOAD_B_A #00  |
 | C2 0000           | NOT B         |
 | 32 0000           | INC B         |
+## 2. Microprocesseur avec sauts conditionnels 
+### **2.1 Sur combien de bits est codée une instruction ?**
+
+### **2.2 Sur combien de bits est codé le code opératoire ?**
+
+### **2.3 Sur combien de bits est codé le champ DATA ou adresse ?**
+
+### **2.4 A quoi servent les 4 bits JMPZ, JMPNZ, JMPN, JMPPZ ?**
+| Bit | Rôle |
+|-----|------|
+|     |      |
+
+### **2.5 Donnez les codes binaires et hexa des instructions suivantes :**
+| Instruction    | Code Binaire | Code Hexa |
+|----------------|--------------|-----------|
+| NOP            | | |
+| LOAD_A #valeur | | |
+| LOAD_B_A       | | |
+| MUL_A_B        | | |
+| DEC_B          | | |
+| JMP [label]    | | |
+| JMPZ [label]   | | |
+| JMPNZ [label]  | | |
+
+### **2.6 En utilisant les instructions ci-dessus, écrire un programme qui charge dans le registre A la valeur 5 puis calcule sa factorielle. Vous donnerez 2 versions. La première version utilisera l’instruction JMPNZ. La deuxième version utilisera les instructions JMPZ et JMP. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.**
+#### 1ère version (JMPNZ)
+| Adresse | Instruction Assembleur | Contenu mémoire |
+|-|-|-|
+| 0| | |
+| 1| | |
+| 2| | |
+| 3| | |
+| 4| | |
+| 5| | |
+| 6| | |
