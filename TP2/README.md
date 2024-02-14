@@ -1,35 +1,43 @@
 # TP2 : Microprocesseurs (Réponses données)
 ## 1. Microprocesseurs élémentaire
-**Sur combien de bits est codée une instruction?**
+### **1.1 Sur combien de bits est codée une instruction?**
 24 bits
-**Sur combien de bits est codé le champ DATA ou adresse ?**
+### **1.2 Sur combien de bits est codé le champ DATA ou adresse ?**
 16 bits
-**Quelles sont les positions, dans le code de l’instruction, des bits du champ DATA ou adresse (0 étant la position du bit de poids le plus faible) ?**
+### **1.3 Quelles sont les positions, dans le code de l’instruction, des bits du champ DATA ou adresse (0 étant la position du bit de poids le plus faible) ?**
 0-15
 
-**Sur combien de bits est codé le code opératoire ?**
+### **1.4 Sur combien de bits est codé le code opératoire ?**
 8 bits
 
-**Quelles sont les positions dans le code de l’instruction, des bits du code opératoire (0 étant la position du bit de poids le plus faible) ?**
+### **1.5 Quelles sont les positions dans le code de l’instruction, des bits du code opératoire (0 étant la position du bit de poids le plus faible) ?**
 16-23
 
-**Indiquez le rôle de chacun des bits du code opératoire**
+### **1.6 Indiquez le rôle de chacun des bits du code opératoire**
 | Position       | Nom        | Rôle                       |
 |----------------|------------|----------------------------|
 | Bit 0          | JMP        | Instruction de saut        |
-| Bit 1          | Registre B | Registre de données        |
-| Bit 2          | Registre A | Registre de données        |
-| Bit 3          | MUX        | Multiplexeur               |
-| Bit 4, 5, 6, 7 | ALU        | Unité logique arithmétique |
+| Bit 1          | Registre B | Activation de l'écriture dans le Registre de données |
+| Bit 2          | Registre A | Activation de l'écriture dans le Registre de données |
+| Bit 3          | MUX        | Sert à choisir entre DATA et Registre A pour l'entrée I0 de l'UAL (Multiplexeur) |
+| Bit 4, 5, 6, 7 | ALU        | Unité Logique Arithmétique |
 
-**__Sans utiliser la simulation, mais en analysant uniquement le code binaire de chaque instruction,__ donnez en assembleur le programme contenu dans la mémoire. Que fait ce programme ?**
-| Mémoire Programme |  Assembleur                                   |
-|-------------------|-----------------------------------------------|
-| 14 0000           | I0<br>I1-1<br>NOP<br>NOP<br>NOP<br>NOP        |
-| 12 000A           | I0<br>I1<br>NOP<br>NOP<br>NOP<br>I1 CMP 10    |
-| 5C0000            | I0 + I1<br>NOT I1<br>NOP<br>NOP<br>NOP<br>NOP |
-| 010002            | NOP<br>I0<br>NOP<br>NOP<br>NOP<br>I1          |
+### **1.7 __Sans utiliser la simulation, mais en analysant uniquement le code binaire de chaque instruction,__ donnez en assembleur le programme contenu dans la mémoire. Que fait ce programme ?**
+| Mémoire Programme |  Assembleur | Label, saut |
+|-------------------|-------------|-------------|
+| 14 0000           | LOAD_A #00  |             |
+| 12 000A           | LOAD_B #10  |             |
+| 5C 0000           | ADD_A_B     | boucle      |
+| 01 0002           | JMP 2       | JMP boucle  |
 
-| Rôle du programme |
-|-------------------|
-|                   |
+| Rôle du programme                               |
+|-------------------------------------------------|
+| Calcule les multiples de 10 dans le registre A. |
+
+### **1.8 Modifiez le programme contenu dans la mémoire pour avoir le résultat dans B au lieu de A.**
+| Mémoire Programme |  Assembleur | Label, saut |
+|-------------------|-------------|-------------|
+| 14 000A           | LOAD_A #10  |             |
+| 12 0000           | LOAD_B #00  |             |
+| 5A 0000           | ADD_B_A     | boucle      |
+| 01 0002           | JMP 2       | JMP boucle  |
