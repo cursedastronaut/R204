@@ -41,3 +41,10 @@
 | 12 0000           | LOAD_B #00  |             |
 | 5A 0000           | ADD_B_A     | boucle      |
 | 01 0002           | JMP 2       | JMP boucle  |
+### **1.9 Ecrire un programme qui charge dans le registre A une valeur de votre choix puis calcule dans le registre B son complément à 2 (complément à 1 + 1)**
+| Mémoire Programme |  Assembleur | Label, saut |
+|-------------------|-------------|-------------|
+| 14 000A           | LOAD_A #FF  |             |
+| 12 0000           | LOAD_B #00  |             |
+| 5A 0000           | ADD_B_A     | boucle      |
+| 01 0002           | JMP 2       | JMP boucle  |
