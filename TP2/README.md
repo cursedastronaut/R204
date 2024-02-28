@@ -147,12 +147,12 @@ Avec VVVV = valeur, AAAA = adresse.
 
 ### **3.3** On considère la suite de Fibonacci : 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... dans laquelle chaque élément est obtenu en faisant la somme des 2 éléments précédents (hormis les 2 premiers). Écrire un programme qui charge dans le registre  A  la  valeur  0  et  dans  le  registre  B  la  valeur  1  puis  calcule  dans  le  registre  C  les  valeurs  de  la  suite  de Fibonacci à l’infini. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.
 
-| Adresse | Instruction assembleur | Code Héxa |
-|---------|------------------------|-----------|
-| 0000    | NOP                    | 0x00 0000 |
-| 0001    | NOP                    | 0x00 0000 |
-| 0002    | NOP                    | 0x00 0000 |
-| 0003    | NOP                    | 0x00 0000 |
-| 0004    | NOP                    | 0x00 0000 |
-| 0005    | NOP                    | 0x00 0000 |
+| Adresse | Instruction assembleur      | Code Héxa   |
+|---------|-----------------------------|-------------|
+| 0000    | LOAD_A 0                    | 0x0014 0000 |
+| 0001    | LOAD_B 1                    | 0x0012 0001 |
+| 0002    | ADD_C_AB                    | 0x2058 0000 |
+| 0003    | LOAD_A_B                    | 0x0024 0000 |
+| 0004    | LOAD_B_C                    | 0x1022 0000 |
+| 0005    | JMP 0002                    | 0x0001 0002 |
 
