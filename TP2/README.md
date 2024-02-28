@@ -136,14 +136,13 @@ Avec VVVV = valeur, AAAA = adresse.
 
 
 ### **3.2** En utilisant les instructions précédentes, écrire un programme qui charge dans le registre A la valeur 3 et dans le registre B la valeur 5 puis permute le contenu des 2 registres A et B. On utilisera le registre C comme variable temporaire pour effectuer la permutation. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.
-| Adresse | Instruction assembleur | Code Héxa |
-|---------|------------------------|-----------|
-| 0000    | NOP                    | 0x00 0000 |
-| 0001    | NOP                    | 0x00 0000 |
-| 0002    | NOP                    | 0x00 0000 |
-| 0003    | NOP                    | 0x00 0000 |
-| 0004    | NOP                    | 0x00 0000 |
-| 0005    | NOP                    | 0x00 0000 |
+| Adresse | Instruction assembleur | Code Héxa   |
+|---------|------------------------|-------------|
+| 0000    | LOAD_A 3               | 0x0014 0003 |
+| 0001    | LOAD_B 5               | 0x0012 0005 |
+| 0002    | LOAC_C_A               | 0x2018 0000 |
+| 0003    | LOAD_A_B               | 0x0024 0000 |
+| 0004    | LOAD_B_C               | 0x1022 0000 |
 
 
 ### **3.3** On considère la suite de Fibonacci : 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... dans laquelle chaque élément est obtenu en faisant la somme des 2 éléments précédents (hormis les 2 premiers). Écrire un programme qui charge dans le registre  A  la  valeur  0  et  dans  le  registre  B  la  valeur  1  puis  calcule  dans  le  registre  C  les  valeurs  de  la  suite  de Fibonacci à l’infini. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.
