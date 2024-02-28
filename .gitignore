@@ -10,3 +10,6 @@
 !TP*/*.pdf
 # But the answers
 !TP*/*.md
+# But the Excel files
+!TP*/*.xlsx
+~$*
