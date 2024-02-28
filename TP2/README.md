@@ -156,3 +156,15 @@ Avec VVVV = valeur, AAAA = adresse.
 | 0004    | LOAD_B_C                    | 0x1022 0000 |
 | 0005    | JMP 0002                    | 0x0001 0002 |
 
+### **3. Bonus**
+| Instruction | Code Héxa   | Explication                                  |
+|-------------|-------------|----------------------------------------------|
+| NOP         | 0x0000 XXXX | Ne fait rien                                 |
+| LOAD_A      | 0x0000 XXXX | A ← valeur                                   |
+| LOAD_B      | 0x0000 XXXX | B ← valeur                                   |
+| LOAD_C      | 0x0000 XXXX | C ← valeur                                   |
+| DEC_B       | 0x0000 XXXX | B ← B - 1                                    |
+| MUL_C_A     | 0x0000 XXXX | C ← C * A                                    |
+| CMP_B       | 0x0000 XXXX | Compare B et valeur et met à jour les indicateurs de l’UAL : si égalité Z passe à 1. Si B<valeur N passe à 1. |
+| JMP <label> | 0x0000 AAAA | Saut inconditionnel à l’adresse indiquée par label |
+| JMPZ <label>| 0x0000 AAAA | Saut à l’adresse indiquée par label si le résultat de l’instruction précédente est nul (indicateur Z=1). |
