@@ -124,15 +124,15 @@ Avec VVVV = valeur, AAAA = adresse.
 
 ## 3. Microprocesseur à 3 registres 
 ### **3.1** Trouvez les codes binaires et hexa des instructions suivantes :
-| Instruction    | Code Binaire        | Code Héxa |
-|----------------|---------------------|-----------|
-| LOAD_A #valeur | 0000 0000 0000 0000 | 0x00 0000 |
-| LOAD_B #valeur | 0000 0000 0000 0000 | 0x00 0000 |
-| LOAD_A_B       | 0000 0000 0000 0000 | 0x00 0000 |
-| LOAD_B_C       | 0000 0000 0000 0000 | 0x00 0000 |
-| LOAD_C_A       | 0000 0000 0000 0000 | 0x00 0000 |
-| ADD_C_AB       | 0000 0000 0000 0000 | 0x00 0000 |
-| JMP (label)    | 0000 0000 0000 0000 | 0x00 0000 |
+| Instruction    | Code Binaire               | Code Héxa   |
+|----------------|----------------------------|-------------|
+| LOAD_A #valeur | XX0X 0000 0001 0100 0xVVVV | 0x0014 VVVV |
+| LOAD_B #valeur | XX0X 0000 0001 0010 0xVVVV | 0x0012 VVVV |
+| LOAD_A_B       | XX00 0000 0010 X100 0xXXXX | 0x0024 0000 |
+| LOAD_B_C       | XX01 0000 0010 X010 0xXXXX | 0x1022 0000 |
+| LOAD_C_A       | XX1X 0000 0001 1000 0xXXXX | 0x2018 0000 |
+| ADD_C_AB       | XX10 0000 0101 1000 0xXXXX | 0x2058 0000 |
+| JMP (label)    | XX0X 0000 0000 0001 0xAAAA | 0x0001 AAAA |
 
 
 ### **3.2** En utilisant les instructions précédentes, écrire un programme qui charge dans le registre A la valeur 3 et dans le registre B la valeur 5 puis permute le contenu des 2 registres A et B. On utilisera le registre C comme variable temporaire pour effectuer la permutation. Ecrivez les codes hexa trouvés dans la mémoire puis testez à l’aide de simulations.
