@@ -157,16 +157,44 @@ Avec VVVV = valeur, AAAA = adresse.
 | 0005    | JMP 0002                    | 0x0001 0002 |
 
 ### **3. Bonus**
-NE PAS SE FIER À CE TABLEAU
-| Instruction | Code Héxa   | Explication                                  |
-|-------------|-------------|----------------------------------------------|
-| NOP         | 0x0000 XXXX | Ne fait rien                                 |
-| LOAD_A      | 0x0000 XXXX | A ← valeur                                   |
-| LOAD_B      | 0x0000 XXXX | B ← valeur                                   |
-| LOAD_C      | 0x0000 XXXX | C ← valeur                                   |
-| DEC_B       | 0x0000 XXXX | B ← B - 1                                    |
-| MUL_C_A     | 0x0000 XXXX | C ← C * A                                    |
-| CMP_B       | 0x0000 XXXX | Compare B et valeur et met à jour les indicateurs de l’UAL : si égalité Z passe à 1. Si B<valeur N passe à 1. |
-| JMP <label> | 0x0000 AAAA | Saut inconditionnel à l’adresse indiquée par label |
-| JMPZ <label>| 0x0000 AAAA | Saut à l’adresse indiquée par label si le résultat de l’instruction précédente est nul (indicateur Z=1). |
+| Instruction   | Code Héxa   | Explication                                  |
+|---------------|-------------|----------------------------------------------|
+| NOP           | 0x0000 XXXX | Ne fait rien                                 |
+| LOAD_A #label | 0x0041 VVVV | A ← valeur                                   |
+| LOAD_B #label | 0x0021 VVVV | B ← valeur                                   |
+| LOAD_C #label | 0x0011 VVVV | C ← valeur                                   |
+| DEC_B         | 0x0426 XXXX | B ← B - 1                                    |
+| MUL_C_A       | 0x0219 XXXX | C ← C * A                                    |
+| CMP_B         | 0x040B VVVV | Compare B et valeur et met à jour les indicateurs de l’UAL : si égalité Z passe à 1. Si B #valeur N passe à 1. |
+| JMP #label    | 0x8000 AAAA | Saut inconditionnel à l’adresse indiquée par label |
+| JMPZ #label   | 0x2000 AAAA | Saut à l’adresse indiquée par label si le résultat de l’instruction précédente est nul (indicateur Z=1). |
 
+**En utilisant le circuit micro4.circ, écrire un programme qui charge dans le registre A une valeur x de votre choix et dans le registre B une autre valeur y de votre choix puis calcule dans le registre C la valeur xy (x puissance y). Vous utiliserez uniquement les instructions définies ci-dessus. Le programme nécessite 9 instructions. Après avoir écrit le programme en assembleur, traduire les instructions en langage machine et entrez les codes dans la mémoire programme du circuit puis testez votre programme.**
+| Adresse | Instruction assembleur      | Code Héxa   |
+|---------|-----------------------------|-------------|
+| 0000    | LOAD_A 2                    | 0x0041 0005 |
+| 0001    | LOAD_B 8                    | 0x0021 0001 |
+| 0002    | LOAD_C 2                    | 0x0011 0003 |
+| 0003    | CMP_B 0                     | 0x040B 0000 |
+| 0004    | JMPZ 0008                   | 0x2000 0008 |
+| 0005    | MUL_C_A                     | 0x0219 0000 |
+| 0006    | DEC_B                       | 0x0426 0000 |
+| 0007    | JMP  0003                   | 0x8000 0003 |
+| 0008    | NOP                         | 0x0000 0000 |
+
+### **4. Bonus**
+**On considère la suite 0, 1, 2, 3, 6, 11, 20, 37, 68, 125, 230, 423, … dans laquelle chaque élément est obtenu en additionnant les 3 éléments précédents. En utilisant le circuit micro3.circ, écrire un programme qui charge dans le registre A la valeur 0, dans le registre B la valeur 1 et dans le registre C la valeur 3 puis calcule les éléments de la suite ci-dessus à l’infini. Le programme nécessite 12 instructions. Après avoir écrit le programme en assembleur, traduire les instructions en langage machine et entrez les codes dans la mémoire programme du circuit puis testez votre programme. Indice : pensez à utiliser la solution de l’exercice 2 (permutation à l’aide de 2 registres seulement).**
+| Adresse | Instruction assembleur      | Code Héxa   |
+|---------|-----------------------------|-------------|
+| 0000    | LOAD_A 0                    | 0x0014 0000 |
+| 0001    | LOAD_B 1                    | 0x0012 0001 |
+| 0002    | LOAD_C 2                    | 0x2010 0002 |
+| 0003    | ADD_A_B                     | 0x0050 0000 |
+| 0004    | ADD_A_C                     | 0x105C 0000 |
+| 0005    | ADD_A_C                     | 0x105C 0000 |
+| 0006    | SUB_C_AC                    | 0x3068 0000 |
+| 0007    | SUB_A_AC                    | 0x106C 0000 |
+| 0008    | ADD_A_B                     | 0x005C 0000 |
+| 0008    | SUB_B_AB                    | 0x006A 0000 |
+| 0008    | SUB_A_AB                    | 0x006C 0000 |
+| 0008    | JMP 0003                    | 0x0001 0003 |
