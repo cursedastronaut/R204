@@ -13,3 +13,10 @@
 # But the Excel files
 !TP*/*.xlsx
 ~$*
+# But the project
+!Projet
+!Projet/projet.circ
+!Projet/PROJET.MAD
+!Projet/PROJET.PAR
+!Projet/*.asm
+Projet/MAG
