@@ -72,12 +72,63 @@ END
 	<br>Le `.CODE` est une directive pour s'adresser au compilateur, et lui dire qu'ici commence la section où commence les intruction du programme.
 
 	<br>Le `END` signifie la fin du programme.
-- **Que définissent les lignes somme `PROC` et somme `ENDP` ?**
+- **Que définissent les lignes `somme PROC` et `somme ENDP` ?**
+	<br>Elles définissent **le début et la fin** de la fonction `somme`. `PROC` comme *procédure*, et `ENDP` comme *end procédure*.
 
 - **Quelle est la taille en bits des paramètres `a` et `b` et quels registres sont utilisés pour transmettre leurs valeurs à la fonction `somme` ?**
+	<br>32 bits, car le type `int` est compilé en tant que 32 bits par défaut sur la majorité des compilateurs. 
+	<br>Les registres utilisés pour transmettre les valeurs, fixés par la convention FastCall, sont `EAX` pour `a`, et `EDX` pour `b`.
 
 - **Quelle est la taille en bits de la valeur retournée par la fonction somme et quel registre est utilisé pour cela ?**
-
+	<br>La taille en bits de la valeur retournée est de 32 bits puisqu'il s'agit d'un `int`
 - **Que fait l’instruction `MOV EAX,ECX` ?**
-
+	<br>Ça copie `ECX` dans `EAX`.
 - **Que fait l’instruction `ADD EAX,EDX` ?**
+	<br>Elle ajoute la valeur de `b` (dans `EDX`) à celle de `a` (directement dans le registre de retour, ici `EAX`), et l'écrit dans ce même registre de retour.
+
+## 3. Programme avec section de données
+```x86asm
+.DATA
+	var1	BYTE	5
+	var2	WORD	8
+	var3	DWORD	7
+	var4	QWORD	9
+	var5	TBYTE	3
+	var6	REAL4	6.25
+	var7	REAL8	2.5
+	var8	DB		2
+	var9	DB		'2'
+	var10	DB		-2, 128, -128, 12
+	var11	DB		'abc',0
+	var12	DB		?
+.CODE
+	fct PROC
+		MOV AL,var1
+		MOV BL,var8
+		ADD AL,BL
+		MOV var12,AL
+		RET
+	fct ENDP
+END
+```
+Notes: 
+| Type | Signification | Taille (octets) | Taille (bits) |
+|------|---------------|-----------------|---------------|
+|`BYTE`| Octet | 1 | 8 |
+|`WORD`| Mot | 2 | 16 |
+|`DWORD`| Double mot | 4 | 32 |
+|`QWORD`| Quadruple mot| 64 |
+|`TBYTE`| Entier 80bits | 10 | 80 |
+|`REAL4`| Réel | 4 | 64 |
+|`REAL8`| Réel | 8 | 128 |
+|`DB`| Définir Byte (octet) | - | - |
+|`DW`| Définir mot | - | - |
+|`DQ`| Définir Quadruple mot  | - | - |
+|`DD`| Définir Double mot | - | - |
+|`DR`| Définir Réel | - | - |
+
+- **Quel est le rôle de la ligne .DATA ?**
+	<br>
+- **La section DATA commence à l’adresse mémoire 0x00007FF75E93E080. Le contenu de la mémoire à partir de cette adresse est indiqué ci-dessous.**
+![Mémoire](memory.png)
+	<br>
