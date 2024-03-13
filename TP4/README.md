@@ -148,3 +148,13 @@ En vous aidant de cette copie d’écran, remplissez le tableau ci-dessous.
 | `var11`  |0x00007FF75E93E0**AB**| 4               | 61 62 63 00                | Codage de la chaine "abc" avec le caractère de fin de chaîne '\0' |
 | `var12`  |0x00007FF75E93E0**AF**| 1               | 00                         | ? signifie variable non initialisée |
 Attention: Le contenu des octets en hexa est inversé (poids faible avant poids fort sur Intel).
+
+- Que remarquez-vous en général pour toutes les variables ?
+	<br>C'est codé en Little Endian (poids faible avant poids fort, sauf chaines).
+- Que remarquez-vous en particulier pour la variable var10 ?
+	<br>On remarque que le compilateur a décidé de coder 128 en binaire naturel sur 8 bits et -128 en complément à 2 sur 8 bits.
+	Ce qui donne finalement le même code 0x80. La question est alors : comment le processeur sait s'il doit interpréter une valeur en binaire naturel ou en complément à 2?
+	Il est important de comprendre qu'en assembleur, la gestion du typage des données est à la charge du programmeur. C'est à lui de choisir les bonnes instructions pour que le processeuur interprète les valeurs dans le bon codage. Flemme d'écrire la suite dsl.
+- Quel autre type peut-on utiliser à la place respectivement de BYTE, WORD, DWORD, QWORD, TWORD ?
+	<br>On peut utiliser DB, DW, DD, DQ, et DT.
+- Le tableau ci-dessous indique le code machine généré pour les instructions du programme
