@@ -28,3 +28,6 @@
 !Projet/PROJET.PAR
 !Projet/*.asm
 Projet/MAG
+
+# Exceptions
+!TP4/*.png

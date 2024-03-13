@@ -111,7 +111,7 @@ END
 	fct ENDP
 END
 ```
-Notes: 
+Types: 
 | Type | Signification | Taille (octets) | Taille (bits) |
 |------|---------------|-----------------|---------------|
 |`BYTE`| Octet | 1 | 8 |
@@ -128,7 +128,22 @@ Notes:
 |`DR`| Définir Réel | - | - |
 
 - **Quel est le rôle de la ligne .DATA ?**
-	<br>
-- **La section DATA commence à l’adresse mémoire 0x00007FF75E93E080. Le contenu de la mémoire à partir de cette adresse est indiqué ci-dessous.**
+	<br>À déclarer les variables du programme.
+- **La section DATA commence à l’adresse mémoire `0x00007FF75E93E080`. Le contenu de la mémoire à partir de cette adresse est indiqué ci-dessous.**
 ![Mémoire](memory.png)
-	<br>
+
+En vous aidant de cette copie d’écran, remplissez le tableau ci-dessous. 
+| Variable | Adresse de début | Nombre d’octets | Contenu des octets en hexa | Explication |
+|----------|------------------|-----------------|----------------------------|-------------|
+| `var1`   | **...80**        | 1               | 05                         | Codage de l'entier 5 sur 8 bits. |
+| `var2`   | **...80**        |                 |                            |             |
+| `var3`   | **...80**        |                 |                            |             |
+| `var4`   | **...80**        |                 |                            |             |
+| `var5`   | **...80**        |                 |                            |             |
+| `var6`   | **...80**        |                 |                            |             |
+| `var7`   | **...80**        |                 |                            |             |
+| `var8`   | **...80**        |                 |                            |             |
+| `var9`   | **...80**        |                 |                            |             |
+| `var10`  | **...80**        |                 |                            |             |
+| `var11`  | **...80**        |                 |                            |             |
+| `var12`  | **...80**        |                 |                            |             |
