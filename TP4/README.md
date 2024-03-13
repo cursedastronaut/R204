@@ -28,4 +28,7 @@
 	- stocker les adresses de retour des fonctions.
 	- zone de transfert pour les paramètres de fonctions.
 - **Que contient le registre des indicateurs EFL ? Quand est-il modifié ?**
-	<br>Le registre EFL contient des informations sur certaines propriétés du dernier résultat de l'UAL.
+	<br>Le registre EFL contient des informations sur certaines propriétés du dernier résultat de l'UAL, tel que
+	- si le nombre est négatif.
+	- si il y a une retenue.
+	- sa parité (s'il est pair ou non).
