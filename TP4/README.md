@@ -133,17 +133,18 @@ Types:
 ![Mémoire](memory.png)
 
 En vous aidant de cette copie d’écran, remplissez le tableau ci-dessous. 
-| Variable | Adresse de début | Nombre d’octets | Contenu des octets en hexa | Explication |
-|----------|------------------|-----------------|----------------------------|-------------|
-| `var1`   | **...80**        | 1               | 05                         | Codage de l'entier 5 sur 8 bits. |
-| `var2`   | **...80**        |                 |                            |             |
-| `var3`   | **...80**        |                 |                            |             |
-| `var4`   | **...80**        |                 |                            |             |
-| `var5`   | **...80**        |                 |                            |             |
-| `var6`   | **...80**        |                 |                            |             |
-| `var7`   | **...80**        |                 |                            |             |
-| `var8`   | **...80**        |                 |                            |             |
-| `var9`   | **...80**        |                 |                            |             |
-| `var10`  | **...80**        |                 |                            |             |
-| `var11`  | **...80**        |                 |                            |             |
-| `var12`  | **...80**        |                 |                            |             |
+| Variable | Adresse de début     | Nombre d’octets | Contenu des octets en hexa | Explication |
+|----------|----------------------|-----------------|----------------------------|-------------|
+| `var1`   |0x00007FF75E93E0**80**| 1               | 05                         | Codage de l'entier 5 sur 8 bits. |
+| `var2`   |0x00007FF75E93E0**81**| 2               | 08 00                      | Codage de l'entier 8 sur 16 bits. |
+| `var3`   |0x00007FF75E93E0**83**| 4               | 07 00 00 00                | Codage de l'entier 7 sur 32 bits. |
+| `var4`   |0x00007FF75E93E0**87**| 8               | 09 00 00 00 00 00 00 00    | Codage de l'entier 9 sur 64 bits. |
+| `var5`   |0x00007FF75E93E0**8F**| 10              | 03 (00 x 9)                | Codage de l'entier 3 sur 80 bits. |
+| `var6`   |0x00007FF75E93E0**99**| 4               | 00 00 C8 40                | Codage du réel 6.25 sur 32 bits. |
+| `var7`   |0x00007FF75E93E0**80**|                 |                            |             |
+| `var8`   |0x00007FF75E93E0**80**|                 |                            |             |
+| `var9`   |0x00007FF75E93E0**80**|                 |                            |             |
+| `var10`  |0x00007FF75E93E0**80**|                 |                            |             |
+| `var11`  |0x00007FF75E93E0**80**|                 |                            |             |
+| `var12`  |0x00007FF75E93E0**80**|                 |                            |             |
+Attention: Le contenu des octets en hexa est inversé (poids faible avant poids fort sur Intel).
