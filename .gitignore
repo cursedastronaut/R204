@@ -12,6 +12,14 @@
 !TP*/*.md
 # But the Excel files
 !TP*/*.xlsx
+# But the MAG files
+!TP*/*.MAD
+# But the PAR files
+!TP*/*.PAR
+# But the binary files (I know, I know, but here, it's better to keep them)
+!TP*/*.BIN
+# But the assembly files
+!TP*/*.ASM
 ~$*
 # But the project
 !Projet
