@@ -26,5 +26,6 @@
 - **Le registre RSP (Stack Pointer) sert à pointer vers la prochaine case libre de la pile. Quelle est le rôle de la pile ?**
 	- stocker les variables locales des fonctions. Lorsqu'une fonction se termine, c'est dépilé.
 	- stocker les adresses de retour des fonctions.
-	- zone de transfert pour les paramètres.
+	- zone de transfert pour les paramètres de fonctions.
 - **Que contient le registre des indicateurs EFL ? Quand est-il modifié ?**
+	<br>Le registre EFL contient des informations sur certaines propriétés du dernier résultat de l'UAL.
