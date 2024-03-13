@@ -1,2 +1,2 @@
-	LOADA #15
+	LOADA #1
 END	JMP END
