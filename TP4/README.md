@@ -145,6 +145,6 @@ En vous aidant de cette copie d’écran, remplissez le tableau ci-dessous.
 | `var8`   |0x00007FF75E93E0**A5**| 1               | 02                         | Codage de l'entier 2 sur 8 bits. |
 | `var9`   |0x00007FF75E93E0**A6**| 1               | 32                         | Codage du caractère '2' en ASCII. |
 | `var10`  |0x00007FF75E93E0**A7**| 4               | FE 80 80 0C                | Codage d'un tableau d'entiers -2; 128; -128; 12 sur 8 bits |
-| `var11`  |0x00007FF75E93E0**AB**|                 |                            |             |
-| `var12`  |0x00007FF75E93E0**80**|                 |                            |             |
+| `var11`  |0x00007FF75E93E0**AB**| 4               | 61 62 63 00                | Codage de la chaine "abc" avec le caractère de fin de chaîne '\0' |
+| `var12`  |0x00007FF75E93E0**AF**| 1               | 00                         | ? signifie variable non initialisée |
 Attention: Le contenu des octets en hexa est inversé (poids faible avant poids fort sur Intel).
