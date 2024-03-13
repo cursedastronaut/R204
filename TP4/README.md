@@ -140,9 +140,9 @@ En vous aidant de cette copie d’écran, remplissez le tableau ci-dessous.
 | `var3`   |0x00007FF75E93E0**83**| 4               | 07 00 00 00                | Codage de l'entier 7 sur 32 bits. |
 | `var4`   |0x00007FF75E93E0**87**| 8               | 09 00 00 00 00 00 00 00    | Codage de l'entier 9 sur 64 bits. |
 | `var5`   |0x00007FF75E93E0**8F**| 10              | 03 (00 x 9)                | Codage de l'entier 3 sur 80 bits. |
-| `var6`   |0x00007FF75E93E0**99**| 4               | 00 00 C8 40                | Codage du réel 6.25 sur 32 bits. |
-| `var7`   |0x00007FF75E93E0**80**|                 |                            |             |
-| `var8`   |0x00007FF75E93E0**80**|                 |                            |             |
+| `var6`   |0x00007FF75E93E0**99**| 4               | 00 00 C8 40                | Codage du réel 6.25 en simple précision sur 32 bits. |
+| `var7`   |0x00007FF75E93E0**9D**| 8               | 00 00 00 00 00 00 04 40    | Codage du réel 2.5 en double précision 64 bits. |
+| `var8`   |0x00007FF75E93E0**A5**| 1               | 02                         | Codage de l'entier 2 sur 8 bits. |
 | `var9`   |0x00007FF75E93E0**80**|                 |                            |             |
 | `var10`  |0x00007FF75E93E0**80**|                 |                            |             |
 | `var11`  |0x00007FF75E93E0**80**|                 |                            |             |
