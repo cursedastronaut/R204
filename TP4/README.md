@@ -1,9 +1,9 @@
 # TP4
 ## 1. Registres des processeurs x64
-- Quelle est le lien entre le registre RAX et le registre EAX ?
-	<br>
+- **Quelle est le lien entre le registre RAX et le registre EAX ?**
+	<br>Le registre EAX représente les <u>32 bits de poids faible</u> de RAX.
 - Quelle est le lien entre le registre EAX et le registre AX ? 
-	<br>
+	<br>Le registre AX représente les <u>16 bits de poids faible</u> de EAX.
 - Quelle est le lien entre le registre AX et les registres AH et AL ? 
 	<br>
 - Sachant qu’une case mémoire peut contenir 8 bits, quelle est en octets, la taille de l'espace mémoire qu'on peut adresser avec une adresse codée sur 16 bits ?	
