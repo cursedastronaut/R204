@@ -71,7 +71,7 @@ END
 - **Que définissent les lignes `.CODE` et `END` ?**
 	<br>Le `.CODE` est une directive pour s'adresser au compilateur, et lui dire qu'ici commence la section où commence les intruction du programme.
 
-	<br>Le `END` signifie la fin de cette section.
+	<br>Le `END` signifie la fin du programme.
 - **Que définissent les lignes somme `PROC` et somme `ENDP` ?**
 
 - **Quelle est la taille en bits des paramètres `a` et `b` et quels registres sont utilisés pour transmettre leurs valeurs à la fonction `somme` ?**
