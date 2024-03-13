@@ -143,8 +143,8 @@ En vous aidant de cette copie d’écran, remplissez le tableau ci-dessous.
 | `var6`   |0x00007FF75E93E0**99**| 4               | 00 00 C8 40                | Codage du réel 6.25 en simple précision sur 32 bits. |
 | `var7`   |0x00007FF75E93E0**9D**| 8               | 00 00 00 00 00 00 04 40    | Codage du réel 2.5 en double précision 64 bits. |
 | `var8`   |0x00007FF75E93E0**A5**| 1               | 02                         | Codage de l'entier 2 sur 8 bits. |
-| `var9`   |0x00007FF75E93E0**80**|                 |                            |             |
-| `var10`  |0x00007FF75E93E0**80**|                 |                            |             |
-| `var11`  |0x00007FF75E93E0**80**|                 |                            |             |
+| `var9`   |0x00007FF75E93E0**A6**| 1               | 32                         | Codage du caractère '2' en ASCII. |
+| `var10`  |0x00007FF75E93E0**A7**| 4               | FE 80 80 0C                | Codage d'un tableau d'entiers -2; 128; -128; 12 sur 8 bits |
+| `var11`  |0x00007FF75E93E0**AB**|                 |                            |             |
 | `var12`  |0x00007FF75E93E0**80**|                 |                            |             |
 Attention: Le contenu des octets en hexa est inversé (poids faible avant poids fort sur Intel).
