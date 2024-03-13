@@ -1,2 +1,1 @@
 	LOADA #1
-END	JMP END
