@@ -4,7 +4,7 @@ debut	LOAD_B #1
 	AND_B_A
 	JMPZ pair
 
-impair	LOAD_B # 3
+impair	LOAD_B #3
 	MUL_A_B
 	LOAD_B_A
 	INC_B
