@@ -1,16 +1,13 @@
-start	
+start	LOADDIADRSI
+boucle	INCSI 
+	LOADBADRSI 
+	CMPB #97 
+	JMPPZ maj
+	LOADASI
+	CMPDIA 
+	JMPN fin
+	JMP boucle
+maj	SUBB #32
+	LOADADRSIB
+	JMP boucle
 fin	JMP fin
-
-;instruction autorisée
-;loadsi #
-;loadasi
-;loaddiadrsi
-;loadbadrsi
-;loadadrsib
-;cmpdia
-;cmpb #
-;sub #
-;incsi
-;jmp <>
-;jmpn <>
-;jmpnz <>
