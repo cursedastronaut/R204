@@ -1,4 +1,32 @@
 # Project R204
+## 0. Sommaire
+
+1. [Champs](#chp)
+	1. [JMP](#chp-JMP)
+	1. [JMPZ](#chp-JMPZ)
+	1. [JMPNZ](#chp-JMPNZ)
+	1. [JMPN](#chp-JMPN)
+	1. [JMPPZ](#chp-JMPPZ)
+	1. [MUX1](#chp-MUX1)
+	1. [MUX0](#chp-MUX0)
+	1. [MUX2](#chp-MUX2)
+	1. [DEC](#chp-DEC)
+	1. [ALU](#chp-ALU)
+	1. [DATA](#chp-DATA)
+1. [Instructions](#ins)
+
+1. [PALIN.ASM](#pal)
+	1. [Pseudo code très littéral](#pal-code)
+	1. [Code expliqué](#pal-exp)
+	1. [Jeu de test](#pal-jeu)
+
+1. [MAJ.ASM](#maj)
+	1. [Pseudo code très littéral](#maj-code)
+	1. [Code expliqué](#maj-exp)
+	1. [Jeu de test](#maj-jeu)
+
+<a id="chp"></a>
+
 ## 1. Champs
 | Adresse | Nom   | Taille | Valeur par défaut | Utilité | Contrôle |
 |---------|-------|--------|-------------------|---------|----------|
@@ -97,15 +125,245 @@
 <a id="chp-DATA"></a>
 
 ### 1.B DATA
+Contient la valeur immédiate ou l'adresse de saut
+à laquelle l'utilisateur veut sauter.
 
+<a id="ins"></a>
 
 ## 2. Instructions
 
+## 2.01 INCSI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+| ALU   | 0101   | Remplacement | I1 + 1   |
+| DEC   | 011    | Remplacement | Écrire dans SI |
+| MUX1  | 01     | Remplacement | I1 = valeur d'SI |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.02 DECDI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+| ALU   |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.03 LOADAADRSI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.04 LOADBADRDI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.05 LOADDIADRSI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.06 LOADA
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.07 LOADSI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.08 LOADADI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.09 JMP
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.0A CMPSIA
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.0B CMPBA
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.0C JMPNZ
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.0D JMPPZ
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.0E LOADASI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.0F LOADBADRSI
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.10 LOADADRSIB
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.11 CMPDIA
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.12 CMPB
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.13 SUBB
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+## 2.14 JMPN
+### Code Opératoire
+| Champ | Valeur | Opération    | Pourquoi |
+|-------|--------|--------------|----------|
+|       |        | Remplacement | |
+
+### Opérandes
+| Champ | Type             |
+|-------|------------------|
+| DATA  |                  |
+
+
+<a id="pal"></a>
+
 ## 3. PALIN.ASM
+<a id="pal-code"></a>
+
 ### 3.1 Pseudo code très littéral
 Pseudo code très littéral.
 ```c
-char* word = "kayak";
+char* word = "\x5kayak";
 int DI = 0, SI = 0, A = 0, B = 0;
 
 void PALIN() {
@@ -132,6 +390,7 @@ void PALIN() {
 	}
 }
 ```
+<a id="pal-exp"></a>
 
 ### 3.2 Code expliqué:
 1. On charge la taille du mot dans DI
@@ -146,6 +405,8 @@ void PALIN() {
 1. Si c'est bien le cas, on met A à 1 et terminé.
 1. Sinon, on recommence à l'étape 2.
 
+<a id="pal-jeu"></a>
+
 ### 3.3 Jeu de test
 
 | Nom du test | RAM                                     | Résultat dans A | Palindrome ? |
@@ -157,3 +418,94 @@ void PALIN() {
 | NPal 5Char  | 0005 0048 0065 006C 006C 006F 0000 00...| -1 (0xFFFF)     | Non          |
 | Pal 5 Char  | 0005 004B 0041 0059 0041 004B 0000 00...| 1               | Oui          |
 
+
+<a id="maj"></a>
+
+## 4 MAJ.ASM
+
+<a id="maj-code"></a>
+
+### 4.1 Pseudo code très littéral
+```c
+int DI = 0, SI = 0, A = 0, B = 0;
+char* word = "\x05AabcF";
+
+void maj() {
+	DI = word[SI]; //Ici, DI = la taille du mot
+	while (true) {
+		++SI;
+		A = SI; //A obtient la valeur actuelle du curseur
+		if ((DI-A)<0) { //si le curseur est plus loin que la taille du mot actuel 
+			break;
+		}
+		B = word[SI];
+		if ((B-97)>=0) { // B - 'a'
+			B -= 32; //B -= 'a' - 'A';
+			word[SI] = B;
+		}
+	}
+}
+```
+
+Voici l'utilité de chaque registre dans ce programme:
+| Registre | Utilité |
+|----------|---------|
+| DI | Stocke la taille du mot. |
+| SI | Curseur du mot (pointe vers la SIème lettre) |
+| A  | Sert à vérifier que le curseur n'a pas atteint la fin (la taille du mot) |
+| B  | Stocke le caractère à l'adresse SI. On le modifie dans B, puis on le renvoie dans la RAM. | 
+
+En sachant cela, on peut réécrire le programme en pseudo-code pour qu'il soit plus lisible
+et simple:
+```c
+int size = 0, cursor = 0, cursorCopy = 0, currentChar = 0;
+char* word = "\x05AabcF";
+
+void maj() {
+	size = word[cursor];
+	while (true) {
+		++cursor;
+		cursorCopy = cursor;
+		//Faire une copie du curseur est inutile, mais à cause des
+		//instructions limités, nous n'avons pas le choix en assembleur.
+		
+		if ((size-cursorCopy) < 0) //si le curseur a atteint la taille du mot, ou l'a dépassé
+			break;
+
+		currentChar = word[size];
+		if ((currentChar-'a')>=0) {
+			currentChar -= 'a' - 'A';
+			word[size] = currentChar;
+		}
+	}
+}
+```
+
+
+<a id="maj-exp"></a>
+
+### 4.2 Code expliqué
+1. On retient la taille du mot (dans DI).
+1. On regarde la lettre suivante *(à la première occurence, 1)*.
+1. Si le numéro de la lettre à laquelle on regarde est égal à la taille du mot, on s'arrête. (Si on a finit de lire le mot.)
+1. Si la lettre à laquelle on regarde est en minuscule (supérieure à 97)
+	- on la met en majuscule (on soustrait 32 à son code ASCII)
+1. On revient à l'étape 2.
+
+
+
+<a id="maj-jeu"></a>
+
+### 4.3 Jeu de test
+Note: Dans le premier cas, un `'e'` a été rajouté. Puisqu'il est en dehors de la chaine,
+vous remarquerez qu'il n'a pas été modifié.
+| ASCII avant | ASCII après | Contenu RAM avant      | Contenu RAM après   |
+|-------------|-------------|------------------------|---------------------|
+| AbcdeF      | ABCDEF      | 5 41 62 63 64 65 46 65 | 5 42 43 44 45 46 65 |
+| a           | A           | 61                     | 41                  |
+| A           | A           | 41                     | 41                  |
+|             |             | 0 0 0...               | 0 0 0...            |
+| aa          | AA          | 61 61                  | 41 41               |
+| aA          | AA          | 61 41                  | 41 41               |
+| Aa          | AA          | 41 61                  | 41 41               |
+| AA          | AA          | 41 41                  | 41 41               |
