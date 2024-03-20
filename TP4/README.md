@@ -279,3 +279,56 @@ MOV tab_dest[RDI*4] , tab_src[RSI*4] ?
 - Que faudrait-il changer dans le programme si on veut qu’il fonctionne aussi avec des valeurs
 négatives ? 
 	- Il faudrait mettre des FF... sur 32 bits, et utiliser `IDIV`
+
+## 6. À vous de jouer
+
+```x86asm
+.DATA
+	n		QWORD	10
+	somme	QWORD	0
+	produit	QWORD	1
+
+.CODE
+	awa	PROC
+		MOV RAX, 1
+		MOV RBX, n
+
+		boucle:
+			AVX somme, RAX
+			IMUL produit, RAX
+			INC RAX
+			CMP RAX, RBX
+			JLE boucle
+
+			RET
+	awa	ENDP
+END
+```
+Version du professeur:
+```x86asm
+.DATA
+	n		QWORD	10
+	somme	QWORD	0
+	produit	QWORD	1
+
+.CODE
+	sommeproduit	PROC
+			MOV RAX, 1
+			MOV RBX, 0
+			MOV RCX, 1
+		Repet:
+			CMP RCX, n
+			JA fin
+
+			MUL RCX
+			ADD RBX, RCX
+
+			INC RCX
+			JMP Repet
+		fin:
+			MOV produit, RAX
+			MOV somme, RBX
+			RET
+	sommeproduit ENDP
+END
+```
