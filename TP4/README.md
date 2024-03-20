@@ -254,21 +254,28 @@ END
 Le programme ci-dessus utilise un tableau `tab_src` de dix nombres, recherche les multiples de 3 et les copie
 dans un autre tableau `tab_dest`.
 - Comment est déclaré le deuxième tableau `tab_dest` ?
-	- Un tableau de 10 entier non initialisés.
+	- Avec la directive DUP qui permet de réserver de multiples éléments, ici 10 éléments DWORD dont le conu est non initialisé
 - Quels sont les registres qui sont utilisés comme indice pour ces tableaux ?
 	- `RSI`, et `RDI`.
 - Quel est le rôle de la ligne 9 ?
-	- met EBX à 3
+	- Prépare le diviseur en mettant EBX à 3.
 - Quel est le rôle des lignes 11 et 12 ?
-
+	- Ces lignes préparent le dividendes dans EAX, EBX.
 - Pourquoi les indices RSI et RDI sont-ils multipliés par 4 dans les lignes 12, 19 et 20 ?
+	Chaque élément du tableau occupe 4 octet, pour passer à l'élément suivant, il faut multiplier par 4.
 - Expliquez comment fonctionne la division de la ligne 14.
+	- Nan flemme
 - Quel est le rôle de la ligne 17 ?
+	- Il va trop vite
 - Est-il possible de remplacer les 2 instructions des lignes 19 et 20 par une seule instruction
+	- Non
 MOV tab_dest[RDI*4] , tab_src[RSI*4] ?
 - Quel est le rôle de la ligne 25 ?
+	- RSI <= 9 on continue la boucle. JBE c'est pour les nombres non-signés.
 - Quel est le contenu du tableau tab_dest à la fin du programme ?
+	- 15 99 45 51 03 75 00 00 00 00 (les multiples de 3)
 - Expliquez ce que fait le programme.
+	- Mets dans tab_dest tout les multiples de trois de tab_src.
 - Que faudrait-il changer dans le programme si on veut qu’il fonctionne aussi avec des valeurs
 négatives ? 
 	- Il faudrait mettre des FF... sur 32 bits, et utiliser `IDIV`
