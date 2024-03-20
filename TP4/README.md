@@ -158,3 +158,50 @@ Attention: Le contenu des octets en hexa est inversé (poids faible avant poids 
 - Quel autre type peut-on utiliser à la place respectivement de BYTE, WORD, DWORD, QWORD, TWORD ?
 	<br>On peut utiliser DB, DW, DD, DQ, et DT.
 - Le tableau ci-dessous indique le code machine généré pour les instructions du programme
+
+| Adresse mémoire    | Code Machine      | Instruction    |
+|--------------------|-------------------|----------------|
+| 0x00007FF75E931CD0 | 8A 05 AA C3 00 00 | MOV AL , var1  |
+| 0x00007FF75E931CD6 | 8A 1D C9 C3 00 00 | MOV BL , var8  |
+| 0x00007FF75E931CDC | 02 C3             | ADD AL , BL    |
+| 0x00007FF75E931CDE | 88 05 CB C3 00 00 | MOV var12 , AL |
+
+Sachant que :
+1. L’adresse de l’instruction MOV AL , var1 est 0x00007FF75E931CD0
+1. L’adresse de la variable var1 est 0x00007FF75E93E080
+1. Le code opératoire de l’instruction MOV AL , <variable> est 8A 05
+comment pouvez-vous expliquer que le champ DATA ou Adresse de cette instruction est égal à AA C3 00 00 ?
+• Que fait ce programme ?
+
+## 4. Si ... alors ... sinon
+Considérons le programme ci-dessous:
+main.cpp
+```cpp
+#include <iostream>
+using namespace std;
+extern "C" unsigned char majorite(unsigned int age);
+int main()
+{
+	unsigned int age;
+	cout << "Quel est votre age ? : "; cin >> age;
+	if (majorite(age))
+		cout << "Vous etes Majeur." << endl;
+	else
+		cout << "Vous etes Mineur." << endl;
+	return 0;
+}
+```
+prog.asm
+```x86asm
+.CODE
+	majorite PROC
+		si_supegal18 : CMP ECX,18
+		JAE alors_majeur
+		sinon_mineur : MOV AL,0
+		JMP fin_si
+		alors_majeur : MOV AL,1
+
+		fin_si : RET
+	majorite ENDP
+END
+```
