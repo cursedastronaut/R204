@@ -170,8 +170,19 @@ Sachant que :
 1. L’adresse de l’instruction MOV AL , var1 est 0x00007FF75E931CD0
 1. L’adresse de la variable var1 est 0x00007FF75E93E080
 1. Le code opératoire de l’instruction MOV AL , <variable> est 8A 05
-comment pouvez-vous expliquer que le champ DATA ou Adresse de cette instruction est égal à AA C3 00 00 ?
+Comment pouvez-vous expliquer que le champ DATA ou Adresse de cette instruction est égal à AA C3 00 00 ?
+- Pour cette instruction, ce qui est codé dans le champ DATA ou Adresse est normalement l'adresse de la variable var1. Sauf qu'il s'agit ici de l'écart relatif et non de l'adresse absolue. C'est-à-dire de l'écart à ajouter à l'adresse actuelle du pointeur d'instruction RIP pour obtenir l'adresse absolue de la variable var1.
+Ainsi au moment où l'instuction MOV AL, var1 est exécutée, RIP pointe déjà sur l'instruction suivante.
+L'adresse de var1 [], la soustraction <adresse de var1> - RIP donne l'adresse qu'on recherche.
+Le champ DATA ou adresse étant sur 32 bits pour cette instruction cela donne 00 00 C3 AA et comme le stockage commence par l'octet de poids faible, cela donne bien AA c3 00 00 dans le code machine
 • Que fait ce programme ?
+Ce programme fait la somme de var1 et var8 et stocke le résultat dans var12.
+
+Notes:
+Instuction contient Valeur -> Immédiat
+Instruction contient l'adresse -> Direct
+Registre contient valeur -> Registre
+Registre contient l'adresse -> Indirect
 
 ## 4. Si ... alors ... sinon
 Considérons le programme ci-dessous:
@@ -205,3 +216,59 @@ prog.asm
 	majorite ENDP
 END
 ```
+1. Comparer les instructions en lignes 6 et 9.
+La ligne 6 effectue un saut conditionnel à alrs_majeur, si ECX est supérieur ou égal (JAE -> Jump if Above or Equal) à 18. Sinon, l'exécution continue vers sinon_mineur, la ligne 9 effectue un saut inconditionnel à fin_si pour contourner la partie alors si on est passé dans la partie sinon.
+1. Que fait le programme ? 
+Le programme reçoit le paramètre age dans le registre ECX (int=32 bits, peu importe unsigned ou pas)
+Si ECX >=18 alors AL= 1
+sinon AL = 0
+
+## 5. Boucles et tableaux
+```x86asm
+.DATA AA
+	tab_src DWORD 15 , 80 , 99 , 45 , 8 , 51 , 3 , 19 , 75 , 10
+	tab_dest DWORD 10 DUP (?)
+.CODE
+	multiple3 PROC
+		MOV RSI,0
+		MOV RDI,0
+		MOV EBX,3
+		boucle :
+			MOV EDX,0
+			MOV EAX,tab_src[RSI*4]
+			DIV EBX
+			CMP EDX,0
+			JNE suivant
+		multiple :
+			MOV ECX,tab_src[RSI*4]
+			MOV tab_dest[RDI*4],ECX
+			INC RDI
+		suivant :
+			INC RSI
+			CMP RSI,9
+			JBE boucle
+		RET
+	multiple3 ENDP
+END
+```
+Le programme ci-dessus utilise un tableau `tab_src` de dix nombres, recherche les multiples de 3 et les copie
+dans un autre tableau `tab_dest`.
+- Comment est déclaré le deuxième tableau `tab_dest` ?
+	- Un tableau de 10 entier non initialisés.
+- Quels sont les registres qui sont utilisés comme indice pour ces tableaux ?
+	- `RSI`, et `RDI`.
+- Quel est le rôle de la ligne 9 ?
+	- met EBX à 3
+- Quel est le rôle des lignes 11 et 12 ?
+
+- Pourquoi les indices RSI et RDI sont-ils multipliés par 4 dans les lignes 12, 19 et 20 ?
+- Expliquez comment fonctionne la division de la ligne 14.
+- Quel est le rôle de la ligne 17 ?
+- Est-il possible de remplacer les 2 instructions des lignes 19 et 20 par une seule instruction
+MOV tab_dest[RDI*4] , tab_src[RSI*4] ?
+- Quel est le rôle de la ligne 25 ?
+- Quel est le contenu du tableau tab_dest à la fin du programme ?
+- Expliquez ce que fait le programme.
+- Que faudrait-il changer dans le programme si on veut qu’il fonctionne aussi avec des valeurs
+négatives ? 
+	- Il faudrait mettre des FF... sur 32 bits, et utiliser `IDIV`
