@@ -32,3 +32,9 @@ Projet/MAG
 
 # Exceptions
 !TP4/*.png
+!TP6 - Séance 7/TP6/**
+!TP6 - Séance 7/Polynome2int/**
+.vs/
+x64/
+
+# Exceptions to exceptions
