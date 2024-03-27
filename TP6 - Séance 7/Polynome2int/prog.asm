@@ -1,3 +1,15 @@
+; Université Paris-Saclay (C) - IUT d'Orsay - Galaad Martineaux
+;
+; Ce programme permet de calculer la valeur d’un polynôme de second degré a*n2+b*n+c pour des valeurs entières
+; données de a, b, c et n. 
+;
+; Intéressons-nous à présent au programme assembleur. Celui-ci comporte cette fois-ci la définition de 4 variables
+; de types QWORD (64 bits) a, b, c, n servant à stocker temporairement les valeurs des paramètres reçus. Une
+; cinquième variable temporaire tmp est également utilisée pour stocker des calculs temporaires. Les cinq variables
+; ne sont pas initialisées, d’où le point d’interrogation.
+; Les premières instructions du programme copient les valeurs des paramètres dans les variables.
+; Le programme procède ensuite aux calculs nécessaires en utilisant l’instruction IMUL qui réalise une multiplication
+; signée ainsi que l’instruction ADD pour l’addition. A la fin le résultat est retourné dans le registre RAX. 
 .DATA
 	a QWORD ?
 	b QWORD ?
