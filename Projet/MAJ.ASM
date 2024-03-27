@@ -5,8 +5,9 @@ boucle	INCSI
 	JMPN fin
 	LOADBADRSI 
 	CMPB #97 
-	JMPPZ maj
-	JMP boucle
+	JMPN boucle
+	CMPB #123
+	JMPPZ boucle
 maj	SUBB #32
 	LOADADRSIB
 	JMP boucle
