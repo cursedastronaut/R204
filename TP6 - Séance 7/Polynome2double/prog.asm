@@ -8,10 +8,10 @@
 	polynome2double PROC
 		; la fonction appelante passe a dans XMM0, b dans XMM1,
 		; c dans XMM2 et n dans XMM3
-		MOVSD xmm0, a
-		MOVSD xmm1, b
-		MOVSD xmm2, c
-		MOVSD xmm3, n
+		MOVSD a, xmm0
+		MOVSD b, xmm1
+		MOVSD c, xmm2
+		MOVSD n, xmm3
 
 		; Calcul de n^2
 		MOVSD xmm4, xmm3
