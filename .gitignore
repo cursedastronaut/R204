@@ -1,5 +1,7 @@
 # Ignore everything
 *
+# But the README
+!README.md
 # But Logisim files
 !*.circ
 # But TP folders
